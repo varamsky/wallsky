@@ -29,5 +29,5 @@ A Wallpaper app made with Flutter.
 </p>
 
 <p align= "center">
-If you like this work please star ⭐ the repository as it will motivate me to learn and share more of such apps.
+If you like this work please star ⭐ the repository as it will motivate me to learn and make more of such apps.
 </p>
