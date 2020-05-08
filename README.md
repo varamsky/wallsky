@@ -3,7 +3,7 @@
 <img align="left" width="1080" src="https://github.com/varamsky/wallsky/blob/master/app_mockup_show.png"/>
 
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-Wallsky, pronounced as wallski (as in Nikolsky).<br><br>
+Wallsky, pronounced as wallski.<br><br>
 A Wallpaper app made with Flutter.
 
 ## You can browse images from various sources like :
