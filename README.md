@@ -6,6 +6,26 @@
 Wallsky, pronounced as wallski.<br><br>
 A Wallpaper app made with Flutter.
 
+## !!How to Use it!! : 
+- Obtain your own API keys from Pexels, Unpslash and Pixabay.
+- Create a file named apiKeys.dart in your lib/ folder having something like this,
+<br>
+    List<String> apiKeyList = [<br>
+      'PUT YOUR PEXELS_API_KEY HERE',<br>
+      'PUT YOUR UNSPLASH_API_KEY HERE',<br>
+      'PUT YOUR PIXABAY_API_KEY HERE',<br>
+    ];<br><br>
+ 
+ this is also shown in the /lib/screens/homeScreen.dart as a comment.
+ 
+ - !!PAY ATTENTIOON!! If you don't follow the previous instructions then the app won't work!!!
+ - The import statement for the apiKeys.dart file is already included in /lib/screens/homeScreen.dart
+ - After this you are good to go.
+ 
+ 
+
+
+
 ## You can browse images from various sources like :
 
  - <a href="https://www.pexels.com/">Pexels</a>
