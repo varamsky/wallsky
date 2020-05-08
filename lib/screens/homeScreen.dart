@@ -11,6 +11,7 @@ import 'package:wallsky/apiDataFromJson/pixabayData.dart';
 import 'package:wallsky/apiDataFromJson/unSplashData.dart';
 import 'package:connectivity/connectivity.dart';
 import 'package:wallsky/constants.dart';
+import 'package:wallsky/apiKeys.dart'; // Create this File containing your own API keys
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -31,7 +32,6 @@ class _HomeScreenState extends State<HomeScreen>
   int currSource;
 
   List<String> urlList;
-  List<String> apiKeyList;
 
   List<Future<http.Response>> httpRequestList;
   var connectivityResult, networkSubscription;
@@ -92,25 +92,10 @@ class _HomeScreenState extends State<HomeScreen>
       'https://pixabay.com/api/?q=$searchText&image_type=photo&pretty=true&page=1&per_page=100&order_by=popular',
     ];
 
-    apiKeyList = [
-      '563492ad6f91700001000001e0de087b1e314bd6a41ab1b74440581c',
-      'OmaRZPXtG8-6s1O5vI2BcTCdZVSeFMyc1eVKrGW7LuQ',
-      '16214201-f62ffd249528c3c161f0ffcb7',
-    ];
-
-/*    httpRequestList = [
-      http.get(
-        //'https://api.pexels.com/v1/search?query=people',
-        //'https://api.pexels.com/v1/search?query=$searchText',
-        urlList[0],
-
-        // Send authorization headers to the backend.
-        headers: {
-          HttpHeaders.authorizationHeader:
-          apiKeyList[0],
-        },
-      ),
-      http.get('${urlList[1]}&client_id=${apiKeyList[1]}'),
+    /*List<String> apiKeyList = [
+      /*'PUT YOUR PEXELS_API_KEY HERE',*/
+      /*'PUT YOUR UNSPLASH_API_KEY HERE',*/
+      /*'PUT YOUR PIXABAY_API_KEY HERE',*/
     ];*/
   }
 
