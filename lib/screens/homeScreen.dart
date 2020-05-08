@@ -11,7 +11,7 @@ import 'package:wallsky/apiDataFromJson/pixabayData.dart';
 import 'package:wallsky/apiDataFromJson/unSplashData.dart';
 import 'package:connectivity/connectivity.dart';
 import 'package:wallsky/constants.dart';
-//import 'package:wallsky/apiKeys.dart'; // Create this File containing your own API keys
+import 'package:wallsky/apiKeys.dart'; // Create this File containing your own API keys
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -26,8 +26,6 @@ class _HomeScreenState extends State<HomeScreen>
   bool showSearchBar = false;
 
   double categoryItemBorder = 0.0;
-
-  List<String> apiKeyList;
 
   List<String> source;
   int currSource;
