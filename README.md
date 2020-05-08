@@ -41,6 +41,14 @@ A Wallpaper app made with Flutter.
  - Get information about the photographer and navigate to the image url.
  
  
+ <br><br>
+ ## Download the apk from this Google Drive link
+ https://drive.google.com/open?id=1TtTHIc-igIvYS70qhB3WoHyHlY7UsOaw
+ 
+ - It contains two apk files, please try the app-release.apk file
+ <br><br>
+ 
+ 
 
     
 <p align="center">
