@@ -6,7 +6,9 @@ import 'package:http/http.dart' as http;
 import 'package:random_color/random_color.dart';
 import 'dart:io';
 import 'package:wallsky/apiDataFromJson/pexelsData.dart';
+import 'package:wallsky/screens/errorScreen.dart';
 import 'package:wallsky/screens/imageScreen.dart';
+import 'package:wallsky/screens/about.dart';
 import 'package:wallsky/apiDataFromJson/pixabayData.dart';
 import 'package:wallsky/apiDataFromJson/unSplashData.dart';
 import 'package:connectivity/connectivity.dart';
@@ -35,15 +37,17 @@ class _HomeScreenState extends State<HomeScreen>
   List<Future<http.Response>> httpRequestList;
   var connectivityResult, networkSubscription;
 
-
   checkConnectivity() async {
     connectivityResult = await (Connectivity().checkConnectivity());
     if (connectivityResult == ConnectivityResult.mobile) {
       print("Connected to Mobile Network");
+      //Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (BuildContext context)=>HomeScreen()));
     } else if (connectivityResult == ConnectivityResult.wifi) {
       print("Connected to WiFi");
+      //Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (BuildContext context)=>HomeScreen()));
     } else {
       print("Unable to connect. Please Check Internet Connection");
+      Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (BuildContext context)=>ErrorScreen()));
     }
   }
 
@@ -136,8 +140,8 @@ class _HomeScreenState extends State<HomeScreen>
           title: Text(
             'Wallsky',
             style: TextStyle(
-                color: Colors.black,
-                fontFamily: 'Carrington',
+              color: Colors.black,
+              fontFamily: 'Carrington',
               fontSize: 42.0,
             ),
           ),
@@ -177,7 +181,8 @@ class _HomeScreenState extends State<HomeScreen>
                             urlList.replaceRange(0, urlList.length, [
                               'https://api.pexels.com/v1/search?query=$searchText&page=1&per_page=100&order_by=popular',
                               //'https://api.pexels.com/v1/search?query=$searchText',
-                              //'https://api.unsplash.com/search/photos?query=$searchText',
+                              //'https://api.unsplash.com/search/photos?quer
+                              // y=$searchText',
                               'https://api.unsplash.com/search/photos?query=$searchText&page=1&per_page=100&order_by=popular',
                               'https://pixabay.com/api/?q=$searchText&image_type=photo&pretty=true&page=1&per_page=100&order_by=popular',
                             ]);
@@ -313,8 +318,10 @@ class _HomeScreenState extends State<HomeScreen>
                   if (networkSubscription == ConnectivityResult.none)
                     return Image.asset('assets/no_internet_connection.jpeg');
                   else if (snap.connectionState == ConnectionState.waiting)
-                    return Center(child: CircularProgressIndicator(
-                      valueColor: new AlwaysStoppedAnimation<Color>(Colors.black),
+                    return Center(
+                        child: CircularProgressIndicator(
+                      valueColor:
+                          new AlwaysStoppedAnimation<Color>(Colors.black),
                       strokeWidth: 2.0,
                     ));
                   else if (snap.connectionState == ConnectionState.done)
@@ -375,8 +382,9 @@ class _HomeScreenState extends State<HomeScreen>
                         ]);
 
                         // setting all Category Items as unselected
-                        for (int i = 0; i < (isCategorySelectedList.length); i++)
-                          isCategorySelectedList[i] = false;
+                        for (int i = 0;
+                            i < (isCategorySelectedList.length);
+                            i++) isCategorySelectedList[i] = false;
 
                         Navigator.of(context)
                             .pop(); // it slides back drawer on clicking any option
@@ -467,6 +475,16 @@ class _HomeScreenState extends State<HomeScreen>
               ],
             ),
           ),
+          ListTile(
+            leading: Icon(
+              Icons.info,
+              color: Colors.black,
+            ),
+            title: Text('About'),
+            onTap: () => Navigator.of(context).push(MaterialPageRoute(
+              builder: (BuildContext context) => About(),
+            ),),
+          ),
         ],
       ),
     );
@@ -546,7 +564,8 @@ class _HomeScreenState extends State<HomeScreen>
                       return Center(
                         child: CircularProgressIndicator(
                           strokeWidth: 2.0,
-                          valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
+                          valueColor:
+                              AlwaysStoppedAnimation<Color>(Colors.white),
                           value: loadingProgress.expectedTotalBytes != null
                               ? loadingProgress.cumulativeBytesLoaded /
                                   loadingProgress.expectedTotalBytes
