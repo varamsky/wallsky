@@ -5,7 +5,6 @@ import 'package:wallsky/constants.dart';
 void main() {
   runApp(MyApp());
 }
-// TODO: have an about section to link all assets and websites
 
 class MyApp extends StatelessWidget {
   @override

@@ -9,13 +9,18 @@ A Wallpaper app made with Flutter.
 ## !!How to Use it!! : 
 - Obtain your own API keys from Pexels, Unpslash and Pixabay.
 - Create a file named apiKeys.dart in your lib/ folder having something like this,
+
 <br>
-    List<String> apiKeyList = [<br>
-      'PUT YOUR PEXELS_API_KEY HERE',<br>
-      'PUT YOUR UNSPLASH_API_KEY HERE',<br>
-      'PUT YOUR PIXABAY_API_KEY HERE',<br>
-    ];<br><br>
- 
+
+```
+List<String> apiKeyList = [  
+	//'PUT YOUR PEXELS_API_KEY HERE',
+	//'PUT YOUR UNSPLASH_API_KEY HERE',
+	//'PUT YOUR PIXABAY_API_KEY HERE',
+];
+```
+
+ <br>
  this is also shown in the /lib/screens/homeScreen.dart as a comment.
  
  - !!PAY ATTENTIOON!! If you don't follow the previous instructions then the app won't work!!!
@@ -36,7 +41,7 @@ A Wallpaper app made with Flutter.
 
  - Browse images from a number of sources flaunting awesome stock images.
  - Download the images to your device.
- - Apply the image as your Home Screen, Lock Screen or Both from within the app.
+ - Apply the image as your Home Screen, Lock Screen from within the app.
  - Search images using search tags.
  - Get information about the photographer and navigate to the image url.
  

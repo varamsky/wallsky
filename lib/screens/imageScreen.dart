@@ -469,30 +469,6 @@ class _ImageScreenState extends State<ImageScreen>
                           return value;
                         });
                       }),
-                  ListTile(
-                      title: Text('Both'),
-                      onTap: () async {
-                        Navigator.of(context).pop();
-                        Fluttertoast.showToast(
-                          msg: "Setting Both Wallpapers ... ",
-                          toastLength: Toast.LENGTH_SHORT,
-                          gravity: ToastGravity.BOTTOM,
-                        );
-                        file = await DefaultCacheManager().getSingleFile(image);
-                        result = await WallpaperManager.setWallpaperFromFile(
-                            file.path, WallpaperManager.HOME_SCREEN);
-                        result = await WallpaperManager.setWallpaperFromFile(
-                                file.path, WallpaperManager.LOCK_SCREEN)
-                            .then((value) {
-                          Fluttertoast.showToast(
-                            msg: "Both Wallpapers Set",
-                            toastLength: Toast.LENGTH_SHORT,
-                            gravity: ToastGravity.BOTTOM,
-                          );
-                          print('WallpaperManager value :: $value');
-                          return value;
-                        });
-                      }),
                 ],
               ),
             );
